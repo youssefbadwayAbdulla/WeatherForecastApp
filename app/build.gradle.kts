@@ -40,6 +40,7 @@ android {
     }
     buildFeatures {
         compose = true
+        buildConfig = true
     }
 
 }
@@ -88,6 +89,7 @@ dependencies {
     // Retrofit for API calls
     implementation (libs.retrofit)
     implementation (libs.converter.gson)
+    implementation(libs.logging.interceptor)
 
     // CameraX
     implementation (libs.androidx.camera.core)
@@ -101,6 +103,6 @@ dependencies {
     // Dependency Injection (Hilt)
     implementation(libs.hilt.android)
     kapt(libs.hilt.compiler)
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.10.2")
+    implementation(libs.kotlinx.coroutines.play.services)
 
 }
