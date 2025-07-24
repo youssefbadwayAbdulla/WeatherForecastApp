@@ -65,11 +65,6 @@ fun Bitmap.overlayWeatherData(weather: WeatherResponse, unit: TemperatureUnit): 
     return bitmap
 }
 
-@SuppressLint("DefaultLocale")
-fun Location.toFormattedString(): String {
-    return String.format("Lat: %.2f, Lon: %.2f", latitude, longitude)
-}
-
 enum class TemperatureUnit {
     CELSIUS, FAHRENHEIT
 }

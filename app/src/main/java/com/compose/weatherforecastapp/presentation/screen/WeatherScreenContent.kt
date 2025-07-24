@@ -16,7 +16,6 @@ import androidx.compose.ui.unit.dp
 import com.compose.weatherforecastapp.common.extentions.preview.BasePreview
 import com.compose.weatherforecastapp.common.extentions.preview.PreviewMultiDevices
 import com.compose.weatherforecastapp.common.utils.TemperatureUnit
-import com.compose.weatherforecastapp.domain.model.currentWeather.Coordinates
 import com.compose.weatherforecastapp.domain.model.currentWeather.Main
 import com.compose.weatherforecastapp.domain.model.currentWeather.Weather
 import com.compose.weatherforecastapp.domain.model.currentWeather.WeatherResponse

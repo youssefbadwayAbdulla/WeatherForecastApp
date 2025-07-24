@@ -18,8 +18,6 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.core.content.ContextCompat
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.compose.weatherforecastapp.common.extentions.openImageInGallery
-import com.compose.weatherforecastapp.common.extentions.preview.BasePreview
-import com.compose.weatherforecastapp.common.extentions.preview.PreviewMultiDevices
 import com.compose.weatherforecastapp.common.extentions.saveToStorage
 import com.compose.weatherforecastapp.common.uiHelper.rememberCameraLauncher
 import com.compose.weatherforecastapp.common.utils.overlayWeatherData
