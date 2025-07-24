@@ -36,7 +36,6 @@ class WeatherViewModel @Inject constructor(
     val imageHistory: StateFlow<List<File>> = _imageHistory
 
     init {
-      //  getWeather(30.0444, 31.2357, "Cairo")
         loadImageHistory()
     }
 
@@ -44,27 +43,11 @@ class WeatherViewModel @Inject constructor(
         viewModelScope.launch {
             _weatherState.value = WeatherUiState.Loading
             try {
-                val (lat, lon, name) = if (latitude == 0.0 && longitude == 0.0) {
-                    if (!context.hasLocationPermission()) {
-                        _weatherState.value = WeatherUiState.Error("Location permission not granted")
-                        return@launch
-                    }
-                    val location = context.getCurrentLocation()
-                    if (location != null) {
-                        Triple(location.latitude, location.longitude, "Current Location")
-                    } else {
-                        _weatherState.value = WeatherUiState.Error("Unable to detect location")
-                        return@launch
-                    }
-                } else {
-                    Triple(latitude, longitude, cityName)
-                }
-
-                getWeatherUseCase.invoke(lat, lon)
+                getWeatherUseCase.invoke(latitude, longitude)
                     .collectLatest { dataState ->
                         _weatherState.value = when (dataState) {
                             is DataState.Loading -> WeatherUiState.Loading
-                            is DataState.Success -> WeatherUiState.Success(dataState.data, name)
+                            is DataState.Success -> WeatherUiState.Success(dataState.data, cityName)
                             is DataState.Error -> WeatherUiState.Error(
                                 dataState.error.message ?: "Unknown error"
                             )
