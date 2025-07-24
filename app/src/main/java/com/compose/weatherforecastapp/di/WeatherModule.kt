@@ -1,8 +1,8 @@
 package com.compose.weatherforecastapp.di
 
 import android.content.Context
-import com.compose.weatherforecastapp.common.location.GpsLocationProvider
-import com.compose.weatherforecastapp.common.location.LocationProvider
+import com.compose.weatherforecastapp.data.repository.GpsLocationProvider
+import com.compose.weatherforecastapp.domain.repository.location.LocationProvider
 import com.compose.weatherforecastapp.data.remote.WeatherService
 import com.compose.weatherforecastapp.data.repository.LocationRepositoryImp
 import com.compose.weatherforecastapp.data.repository.WeatherRepositoryImpl

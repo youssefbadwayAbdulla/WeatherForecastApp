@@ -1,4 +1,4 @@
-package com.compose.weatherforecastapp.utils
+package com.compose.weatherforecastapp.common.utils
 
 sealed class DataState<out T> {
     object Loading : DataState<Nothing>()

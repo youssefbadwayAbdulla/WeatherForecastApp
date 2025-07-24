@@ -10,6 +10,7 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 import javax.inject.Inject
+
 @HiltViewModel
 class LocationViewModel @Inject constructor(
     private val getCurrentLocation: GetCurrentLocationUseCase
@@ -46,7 +47,6 @@ class LocationViewModel @Inject constructor(
                         latitude = coordinates.latitude,
                         longitude = coordinates.longitude,
                         cityName = cityName,
-                        shouldNavigateToWeather = true
                     )
                 } else {
                     _uiState.value = _uiState.value.copy(

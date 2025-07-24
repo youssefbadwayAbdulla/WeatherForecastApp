@@ -1,7 +1,7 @@
 package com.compose.weatherforecastapp.di
 
-import com.compose.weatherforecastapp.common.location.GpsLocationProvider
-import com.compose.weatherforecastapp.common.location.LocationProvider
+import com.compose.weatherforecastapp.data.repository.GpsLocationProvider
+import com.compose.weatherforecastapp.domain.repository.location.LocationProvider
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn

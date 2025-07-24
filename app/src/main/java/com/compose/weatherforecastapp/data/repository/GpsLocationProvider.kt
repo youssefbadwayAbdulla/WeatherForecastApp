@@ -1,10 +1,11 @@
-package com.compose.weatherforecastapp.common.location
+package com.compose.weatherforecastapp.data.repository
 
 import android.Manifest
 import android.content.Context
 import android.content.pm.PackageManager
 import android.location.Location
 import androidx.core.content.ContextCompat
+import com.compose.weatherforecastapp.domain.repository.location.LocationProvider
 import com.google.android.gms.location.LocationServices
 import com.google.android.gms.location.Priority
 import com.google.android.gms.tasks.CancellationTokenSource
@@ -14,7 +15,8 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.callbackFlow
 import javax.inject.Inject
 
-class GpsLocationProvider @Inject constructor(  @ApplicationContext private val context: Context) : LocationProvider {
+class GpsLocationProvider @Inject constructor(@ApplicationContext private val context: Context) :
+    LocationProvider {
 
     override fun getCurrentLocation(): Flow<Location> = callbackFlow {
         if (!hasLocationPermission()) {

@@ -1,6 +1,7 @@
 package com.compose.weatherforecastapp.domain.repository.location
 
-import com.compose.weatherforecastapp.domain.model.location.Coordinates
+import com.compose.weatherforecastapp.domain.model.currentWeather.Coordinates
+
 
 interface LocationRepository {
     suspend fun getCoordinates(): Coordinates?

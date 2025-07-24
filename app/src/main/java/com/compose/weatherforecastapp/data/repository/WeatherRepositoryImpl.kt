@@ -3,7 +3,7 @@ package com.compose.weatherforecastapp.data.repository
 import com.compose.weatherforecastapp.data.remote.WeatherService
 import com.compose.weatherforecastapp.domain.model.currentWeather.WeatherResponse
 import com.compose.weatherforecastapp.domain.repository.WeatherRepository
-import com.compose.weatherforecastapp.utils.DataState
+import com.compose.weatherforecastapp.common.utils.DataState
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import javax.inject.Inject

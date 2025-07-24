@@ -58,6 +58,7 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
+    implementation(libs.androidx.appcompat)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     androidTestImplementation(platform(libs.androidx.compose.bom))
@@ -104,5 +105,16 @@ dependencies {
     implementation(libs.hilt.android)
     kapt(libs.hilt.compiler)
     implementation(libs.kotlinx.coroutines.play.services)
+    implementation("com.google.dagger:hilt-android:2.56.2")
+    kapt("com.google.dagger:hilt-compiler:2.56.2")
+    implementation("io.coil-kt:coil-compose:2.7.0")
+
+    implementation( "androidx.activity:activity-compose:1.7.2")
+    implementation ("androidx.compose.runtime:runtime-livedata:1.5.1")
+
+// Hilt
+    implementation( "androidx.hilt:hilt-navigation-compose:1.1.0")
+    implementation ("com.google.dagger:hilt-android:2.48")
+    implementation("com.google.accompanist:accompanist-permissions:0.34.0")
 
 }
