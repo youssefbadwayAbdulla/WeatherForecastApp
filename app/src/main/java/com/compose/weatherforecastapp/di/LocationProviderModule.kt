@@ -18,5 +18,4 @@ abstract class LocationProviderModule {
         gpsLocationProvider: GpsLocationProvider
     ): LocationProvider
 
-
 }
