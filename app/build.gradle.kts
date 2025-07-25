@@ -62,6 +62,7 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
+    testImplementation(libs.junit.junit)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 
@@ -100,17 +101,25 @@ dependencies {
     implementation(libs.kotlinx.coroutines.test)
     implementation(libs.kotlinx.coroutines.play.services)
 
-    // Unit Testing
-    testImplementation(libs.junit)
+    // testing
     testImplementation(libs.truth)
     testImplementation(libs.mockk)
+    testImplementation(libs.junit.jupiter.api)
+    testRuntimeOnly(libs.junit.jupiter.engine)
+    testImplementation(libs.androidx.core)
     testImplementation(libs.junit.jupiter)
     testImplementation(libs.turbine)
+    testImplementation(libs.androidx.core.testing)
 
-    // Instrumented Android Testing
+    //android testing
+    androidTestImplementation(libs.truth)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     androidTestImplementation(platform(libs.androidx.compose.bom))
     androidTestImplementation(libs.androidx.ui.test.junit4)
+}
+
+tasks.withType<Test> {
+    useJUnitPlatform()
 }
 
