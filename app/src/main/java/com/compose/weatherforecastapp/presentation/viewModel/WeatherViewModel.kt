@@ -1,11 +1,8 @@
 package com.compose.weatherforecastapp.presentation.viewModel
 
 import android.content.Context
-import android.graphics.Bitmap
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.compose.weatherforecastapp.common.extentions.getCurrentLocation
-import com.compose.weatherforecastapp.common.extentions.hasLocationPermission
 import com.compose.weatherforecastapp.common.utils.DataState
 import com.compose.weatherforecastapp.common.utils.TemperatureUnit
 import com.compose.weatherforecastapp.domain.usecase.GetWeatherUseCase
@@ -67,7 +64,7 @@ class WeatherViewModel @Inject constructor(
         _imageHistory.value = _imageHistory.value + file
     }
 
-    private fun loadImageHistory() {
+    internal fun loadImageHistory() {
         viewModelScope.launch {
             val directory = context.getExternalFilesDir(null)
             val imageFiles = directory?.listFiles { _, name -> name.endsWith(".png") }?.toList() ?: emptyList()
